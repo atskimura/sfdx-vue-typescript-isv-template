@@ -1,4 +1,4 @@
 module.exports = {
-  outputDir: 'force-app/main/default/staticresources/app',
+  outputDir: 'sfdx-src/managed/main/default/staticresources/app',
   filenameHashing: false
 }

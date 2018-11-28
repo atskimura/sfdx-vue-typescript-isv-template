@@ -1,9 +1,8 @@
 {
   "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true
-    }
+    { "path": "sfdx-src/managed" },
+    { "path": "sfdx-src/unmanaged" },
+    { "path": "sfdx-src/untracked", "default": true }
   ],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
