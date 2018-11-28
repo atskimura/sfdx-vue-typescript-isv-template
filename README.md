@@ -41,6 +41,21 @@ npm run deploy
 npm run open
 ```
 
+### スクラッチ組織にpush
+```
+npm run push
+```
+
+### スクラッチ組織にforce push
+```
+npm run pushf
+```
+
+### スクラッチ組織からpull
+```
+npm run pull
+```
+
 ### Run your tests
 ```
 npm run test

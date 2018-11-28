@@ -4,7 +4,8 @@
   standardStylesheets="false"
   applyBodyTag="false"
   applyHtmlTag="false"
-  docType="html-5.0">
+  docType="html-5.0"
+  controller="RemotingService">
   <html lang="ja">
     <head>
       <meta charset="utf-8" />
