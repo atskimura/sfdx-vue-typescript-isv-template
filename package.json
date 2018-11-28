@@ -1,12 +1,19 @@
 {
-  "name": "vue-typescript-sample",
+  "name": "sfdx-vue-typescript-sample",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test": "vue-cli-service test:unit",
+    "setup": "npm run sfdx:org:create && npm run deploy",
+    "deploy": "npm run build && npm run sfdx:source:push",
+    "open": "npm run sfdx:org:open",
+    "sfdx:org:create": "sfdx force:org:create -f ./config/project-scratch-def.json -s -a sfdx-vue-typescript-sample-SCRATCH",
+    "sfdx:org:open": "sfdx force:org:open --path '/apex/index'",
+    "sfdx:source:push": "sfdx force:source:push",
+    "sfdx:source:pull": "sfdx force:source:pull"
   },
   "dependencies": {
     "vue": "^2.5.17",

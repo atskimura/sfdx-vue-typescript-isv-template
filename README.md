@@ -1,11 +1,27 @@
-# vue-typescript-sample
+# sfdx-vue-typescript-sample
 
-## Project setup
+## 環境構築
+
+DevHub組織に接続
+
+```
+sfdx force:auth:web:login -a <エイリアス名>
+```
+
+npmパッケージのインストール
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## コマンド
+
+### スクラッチ組織作成
+```
+npm run setup
+```
+
+### ローカル開発
 ```
 npm run serve
 ```
@@ -13,6 +29,16 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
+```
+
+### ビルドしてスクラッチ組織にデプロイ
+```
+npm run deploy
+```
+
+### スクラッチ組織を開く
+```
+npm run open
 ```
 
 ### Run your tests
@@ -25,10 +51,7 @@ npm run test
 npm run lint
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
+## 注意点
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* 画像はimgタグを使用せず、cssのbackgroundを使用する。
+* ローカル開発ではSalesforceへのアクセスはモックを使用する。

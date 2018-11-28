@@ -1,0 +1,24 @@
+<apex:page
+  sidebar="false"
+  showHeader="false"
+  standardStylesheets="false"
+  applyBodyTag="false"
+  applyHtmlTag="false"
+  docType="html-5.0">
+  <html lang="ja">
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link rel="icon" href="{!URLFOR($Resource.app, '/favicon.ico')}"></link>
+      <title>sfdx-vue-typescript-sample</title>
+      <link href="{!URLFOR($Resource.app, '/css/app.css')}" rel="stylesheet"></link>
+    </head>
+    <body>
+      <div id="app"></div>
+
+      <script src="{!URLFOR($Resource.app, '/js/chunk-vendors.js')}"></script>
+      <script src="{!URLFOR($Resource.app, '/js/app.js')}"></script>
+    </body>
+  </html>
+</apex:page>
