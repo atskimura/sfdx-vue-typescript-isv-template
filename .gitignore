@@ -2,6 +2,7 @@
 node_modules
 /dist
 .sfdx
+mdapi-src
 
 # local env files
 .env.local

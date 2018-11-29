@@ -1,6 +1,7 @@
 # sfdx-vue-typescript-sample
 
 SFDX, Vue.js, TypeScriptを使用したSalesforceの管理パッケージ開発のサンプルです。
+Vue CLI 3で生成された雛形をベースにしています。
 
 ## 環境構築
 
@@ -46,11 +47,57 @@ npm run setup
 
 このコマンドで以下の処理を行います。
 
-* スクラッチ組織の作成
-* リソースのpush
-* 権限セットの付与
-* データのインポート
+1. スクラッチ組織の作成
+2. リソースのpush
+3. 権限セットの付与
+4. データのインポート
 
+## ディレクトリ構成
+
+### クラインアントサイド
+
+* src: クライアントサイドのコード
+* tests: クライアントテストコード
+* public: index.html, faviconなどルートに置かれるもの。
+
+ビルド結果が`sfdx-src/managed/staticresources/app`に出力され、Salesforceに静的リソースとしてアップされる。
+
+### Salesforce関係
+
+* sfdx-src: SFDX形式のSalesforceのソースコード
+  * managed: 管理パッケージに含むリソースを入れる。
+  * unmanaged: 管理パッケージに含まないが、開発環境として共有したいリソースを入れる。
+  * untracked: gitで管理しないリソースを入れる。pullするとデフォルトでここに入る。
+* config: スクラッチ組織の設定。サンプルデータ。
+* mdapi-src: Metadata API形式のソースコード。パッケージ作成のために一時的に作成される。
+
+## パッケージ作成
+
+1. パッケージのIDを`package.json`に設定
+
+```
+  "config": {
+    "packageid": "03310000000XXXX"
+  },
+```
+
+2. パッケージ開発組織にログイン
+
+```
+npm run loginp
+```
+
+3. パッケージ作成
+
+```
+npm run package
+```
+
+このコマンドでは以下の処理を行います。
+
+1. Metadata API形式のソースコードを`mdapi-src`に出力
+2. パッケージ開発組織にデプロイ
+3. ベータパッケージを作成
 
 ## コマンド
 

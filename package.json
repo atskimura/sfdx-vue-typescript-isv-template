@@ -2,11 +2,15 @@
   "name": "sfdx-vue-typescript-sample",
   "version": "0.1.0",
   "private": true,
+  "config": {
+    "packageid": "03310000000XXXX"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "vue-cli-service test:unit",
+    "test": "npm run test:js && npm run test:apex",
+    "test:js": "vue-cli-service test:unit",
     "setup": "npm run org:create && npm run push && npm run permset:assign && npm run data:import",
     "setupd": "npm run org:delete && npm run setup",
     "deploy": "npm run build && npm run push",
@@ -15,11 +19,18 @@
     "pushf": "sfdx force:source:push -f",
     "pull": "sfdx force:source:pull",
     "pullf": "sfdx force:source:pull -f",
+    "loginp": "npm run login:package",
+    "package": "npm run source:convert && npm run mdapi:deploy && npm run package1:create",
     "org:create": "sfdx force:org:create -f ./config/project-scratch-def.json -s -a ${npm_package_name}-SCRATCH -d 30",
     "org:delete": "sfdx force:org:delete -u ${npm_package_name}-SCRATCH -p",
     "permset:assign": "sfdx force:user:permset:assign -n AppUser -u ${npm_package_name}-SCRATCH",
     "data:import": "sfdx force:data:tree:import -f ./config/data/Room__c.json -u ${npm_package_name}-SCRATCH",
-    "data:export": "sfdx force:data:tree:export -q ./config/soql/Room__c.soql -d ./config/data"
+    "data:export": "sfdx force:data:tree:export -q ./config/soql/Room__c.soql -d ./config/data",
+    "test:apex": "sfdx force:apex:test:run",
+    "source:convert": "rm -rf ./mdapi-src/managed && sfdx force:source:convert -d ./mdapi-src/managed -n ${npm_package_name} -r ./sfdx-src/managed",
+    "mdapi:deploy": "sfdx force:mdapi:deploy -d ./mdapi-src/managed -l RunLocalTests -u ${npm_package_name}-PACKAGE -w 15",
+    "login:package": "sfdx force:auth:web:login -a ${npm_package_name}-PACKAGE",
+    "package1:create": "sfdx force:package1:version:create --packageid ${npm_package_config_packageid} --name ${npm_package_name} -u ${npm_package_name}-PACKAGE"
   },
   "dependencies": {
     "@salesforce-ux/design-system": "^2.7.5",
