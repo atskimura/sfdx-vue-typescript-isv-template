@@ -11,9 +11,9 @@ export default {
       });
     } else {
       return Promise.resolve([
-        { Id: '#', Name: 'ローカル会議室A' },
-        { Id: '#', Name: 'ローカル会議室B' },
-        { Id: '#', Name: 'ローカル会議室C' },
+        { Id: '#', Name: 'ローカル会議室A', Capacity__c: 4 },
+        { Id: '#', Name: 'ローカル会議室B', Capacity__c: 5 },
+        { Id: '#', Name: 'ローカル会議室C', Capacity__c: 6 },
       ]);
     }
   },

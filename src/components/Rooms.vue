@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div v-for="room in rooms">
-      <div><a :href="'/'+room.Id">{{ room.Name }}</a></div>
+      <div><a :href="'/'+room.Id">{{ room.Name }}（定員: {{room.Capacity__c}}）</a></div>
     </div>
   </div>
 </template>

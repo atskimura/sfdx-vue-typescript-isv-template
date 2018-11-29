@@ -1,6 +1,6 @@
 public class RemotingService {
   @RemoteAction
   public static Room__c[] getAllRooms(){
-    return [SELECT Id, Name FROM Room__c];
+    return [SELECT Id, Name, Capacity__c FROM Room__c];
   }
 }
