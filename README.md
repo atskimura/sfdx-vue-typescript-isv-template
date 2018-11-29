@@ -74,7 +74,7 @@ npm run setup
 
 ## パッケージ作成
 
-1. パッケージのIDを`package.json`に設定
+1. パッケージ開発組織で空のパッケージを作成し、そのパッケージのIDを`package.json`に設定
 
 ```
   "config": {
