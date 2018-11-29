@@ -16,7 +16,7 @@ npm install
 
 ## コマンド
 
-### スクラッチ組織作成
+### スクラッチ組織作成し、初期化
 ```
 npm run setup
 ```
@@ -66,7 +66,14 @@ npm run test
 npm run lint
 ```
 
-## 注意点
+## ポイント
 
-* 画像はimgタグを使用せず、cssのbackgroundを使用する。
-* ローカル開発ではSalesforceへのアクセスはモックを使用する。
+* Apex実行
+  * JavaScript Remotingを使用する。
+  * ローカル開発ではSalesforceへのアクセスはモックを使用する。
+* Lightning Design System
+  * `apex:slds` タグを使用する。
+  * ローカルでは、CDNから取得する。
+  * ただし、SVGアイコンの表示はうまくいかず、仕方なくLDSのnpmパッケージからurl-loaderでimgタグに埋め込んでいる。
+* 画像
+  * file-loaderだと静的リソースのパスを渡すのが大変なので、url-loaderのみ使うようにしている。

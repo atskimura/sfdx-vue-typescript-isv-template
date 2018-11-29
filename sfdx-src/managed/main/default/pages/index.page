@@ -6,6 +6,8 @@
   applyHtmlTag="false"
   docType="html-5.0"
   controller="RemotingService">
+  <apex:slds />
+
   <html lang="ja">
     <head>
       <meta charset="utf-8" />
@@ -15,7 +17,7 @@
       <title>sfdx-vue-typescript-sample</title>
       <link href="{!URLFOR($Resource.app, '/css/app.css')}" rel="stylesheet"></link>
     </head>
-    <body>
+    <body class="slds-scope">
       <div id="app"></div>
 
       <script src="{!URLFOR($Resource.app, '/js/chunk-vendors.js')}"></script>

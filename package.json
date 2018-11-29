@@ -19,9 +19,10 @@
     "org:delete": "sfdx force:org:delete -u ${npm_package_name}-SCRATCH -p",
     "permset:assign": "sfdx force:user:permset:assign -n AppUser -u ${npm_package_name}-SCRATCH",
     "data:import": "sfdx force:data:tree:import -f ./config/data/Room__c.json -u ${npm_package_name}-SCRATCH",
-    "data:export": "sfdx force:data:tree:export -q \"SELECT Name, Capacity__c FROM Room__c\" -d config/data"
+    "data:export": "sfdx force:data:tree:export -q ./config/soql/Room__c.soql -d ./config/data"
   },
   "dependencies": {
+    "@salesforce-ux/design-system": "^2.7.5",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
