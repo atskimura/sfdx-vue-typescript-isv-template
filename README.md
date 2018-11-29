@@ -1,8 +1,7 @@
 # sfdx-vue-typescript-sample
 
-SFDX, Vue.js, TypeScriptを使用したSalesforceの管理パッケージ開発のサンプルです。  
-Vue CLI 3で生成された雛形をベースにしています。  
-サンプルと書いていますが、環境構築手順の通りに進めれば開発テンプレートとしても使えます。  
+SFDX, Vue.js, TypeScriptを使用したSalesforceの管理パッケージ開発のテンプレート兼サンプルです。  
+Vue CLI 3で生成された雛形をベースにしています。
 
 ## 環境構築
 
