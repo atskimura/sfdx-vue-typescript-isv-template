@@ -2,27 +2,27 @@
     "records": [
         {
             "attributes": {
-                "type": "Room__c",
+                "type": "mynamespace__Room__c",
                 "referenceId": "Room__cRef1"
             },
             "Name": "会議室A",
-            "Capacity__c": 4
+            "mynamespace__Capacity__c": 4
         },
         {
             "attributes": {
-                "type": "Room__c",
+                "type": "mynamespace__Room__c",
                 "referenceId": "Room__cRef2"
             },
             "Name": "会議室B",
-            "Capacity__c": 6
+            "mynamespace__Capacity__c": 6
         },
         {
             "attributes": {
-                "type": "Room__c",
+                "type": "mynamespace__Room__c",
                 "referenceId": "Room__cRef3"
             },
             "Name": "会議室C",
-            "Capacity__c": 8
+            "mynamespace__Capacity__c": 8
         }
     ]
 }

@@ -1,18 +1,56 @@
 # sfdx-vue-typescript-sample
 
+SFDX, Vue.js, TypeScriptを使用したSalesforceの管理パッケージ開発のサンプルです。
+
 ## 環境構築
 
-DevHub組織に接続
+1. 事前準備
+
+DevHub組織の設定、DevHub組織に使用するネームスペースの登録まで事前に行ってください。
+
+2. DevHub組織に接続
 
 ```
 sfdx force:auth:web:login -a <エイリアス名>
 ```
 
-npmパッケージのインストール
+3. npmパッケージのインストール
 
 ```
 npm install
 ```
+
+4. ネームスペースを設定
+
+以下のファイルの`mynamespace`となっている箇所を変更します。
+
+* `sfdx-project.json`
+* `src/config.ts`
+
+以下のサンプルデータ用のファイルもそのまま試したい場合は置換してください。
+
+* `config/data/Room__c.json`
+* `config/soql/Room__c.soql`
+
+以下のようなperlコマンドで置換すると楽に置換できます。
+
+```
+perl -pi -e "s/mynamespace__/myrealnamespace__/g" ./config/data/Room__c.json
+```
+
+5. スクラッチ組織を作成
+
+```
+npm run setup
+```
+
+このコマンドで以下の処理を行います。
+
+* スクラッチ組織の作成
+* リソースのpush
+* 権限セットの付与
+* データのインポート
+
 
 ## コマンド
 

@@ -4,7 +4,7 @@
     { "path": "sfdx-src/unmanaged" },
     { "path": "sfdx-src/untracked", "default": true }
   ],
-  "namespace": "",
+  "namespace": "mynamespace",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "44.0"
 }

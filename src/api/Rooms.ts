@@ -1,12 +1,14 @@
+import config from '@/config';
+
 export default {
   getAllRooms(): Promise<any> {
     if (process.env.NODE_ENV === 'production') {
       return new Promise<any>((resolve) => {
         // namepsaceを設定した場合は要修正
         window.Visualforce.remoting.Manager.invokeAction(
-          'RemotingService.getAllRooms',
+          `${config.$namespace}.RemotingService.getAllRooms`,
           (result: any[], event: any) => {
-            resolve(result);
+            resolve(result.map((record) => this.stripNamespace(record)));
           },
         );
       });
@@ -17,5 +19,17 @@ export default {
         { Id: '3', Name: 'ローカル会議室C', Capacity__c: 6 },
       ]);
     }
+  },
+  stripNamespace(record: any): any {
+    const newRecord: {[s: string]: any} = {};
+    for (const [name, value] of Object.entries(record)) {
+      const match = name.match(/^[\w\d]+__([\w\d]+__c)/);
+      if (match) {
+        newRecord[match[1]] = value;
+      } else {
+        newRecord[name] = value;
+      }
+    }
+    return newRecord;
   },
 };

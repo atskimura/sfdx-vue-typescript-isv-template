@@ -1,1 +1,1 @@
-SELECT Name, Capacity__c FROM Room__c
+SELECT Name, mynamespace__Capacity__c FROM mynamespace__Room__c
