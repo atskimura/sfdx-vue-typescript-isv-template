@@ -4,7 +4,6 @@ export default {
   getAllRooms(): Promise<any> {
     if (process.env.NODE_ENV === 'production') {
       return new Promise<any>((resolve) => {
-        // namepsaceを設定した場合は要修正
         window.Visualforce.remoting.Manager.invokeAction(
           `${config.$namespace}.RemotingService.getAllRooms`,
           (result: any[], event: any) => {
