@@ -23,11 +23,7 @@ export default {
     const newRecord: {[s: string]: any} = {};
     for (const [name, value] of Object.entries(record)) {
       const match = name.match(/^[\w\d]+__([\w\d]+__c)/);
-      if (match) {
-        newRecord[match[1]] = value;
-      } else {
-        newRecord[name] = value;
-      }
+      newRecord[match ? match[1] : name] = value;
     }
     return newRecord;
   },
