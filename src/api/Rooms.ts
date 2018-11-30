@@ -22,7 +22,7 @@ export default {
   stripNamespace(record: any): any {
     const newRecord: {[s: string]: any} = {};
     for (const [name, value] of Object.entries(record)) {
-      const match = name.match(/^[\w\d]+__([\w\d]+__c)/);
+      const match = name.match(/^[\w\d]+__([\w\d_]+__c)/);
       newRecord[match ? match[1] : name] = value;
     }
     return newRecord;
