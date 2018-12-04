@@ -4,7 +4,7 @@ export default {
   getAllRooms(): Promise<any> {
     if (process.env.NODE_ENV === 'production') {
       return new Promise<any>((resolve) => {
-        window.Visualforce.remoting.Manager.invokeAction(
+        Visualforce.remoting.Manager.invokeAction(
           `${config.$namespace}.RemotingService.getAllRooms`,
           (result: any[], event: any) => {
             resolve(result.map((record) => this.stripNamespace(record)));

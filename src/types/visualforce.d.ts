@@ -1,6 +1,8 @@
 /**
  * Salesforce JavaScript Remotingの型定義
  */
-interface Window {
-  Visualforce: any
+declare namespace Visualforce.remoting {
+  export class Manager {
+    static invokeAction(actionName:string, ...args:any): void;
+  }
 }
