@@ -11,7 +11,7 @@
     "lint": "vue-cli-service lint",
     "test": "npm run test:js && npm run test:apex",
     "test:js": "vue-cli-service test:unit",
-    "setup": "npm run org:create && npm run push && npm run permset:assign && npm run data:import",
+    "setup": "npm run org:create && npm run deploy && npm run permset:assign && npm run data:import",
     "setupd": "npm run org:delete && npm run setup",
     "deploy": "npm run build && npm run push",
     "open": "sfdx force:org:open --path '/apex/index'",
